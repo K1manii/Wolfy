@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,12 +13,63 @@
       font-family: Arial, sans-serif;
       background-color: #e8e5e6;
       color: #000;
+      padding-top: 60px;
+      /* Space for fixed navbar */
     }
-    
+
+    /* --- NAVIGATION BAR --- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 15px 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+    }
+
     /* --- HERO SECTION --- */
     header {
       height: 100vh;
-      background: url('Others/wolfy image studios-2021 logo.png') center/cover no-repeat;
+      background: url('Others/wolfy image studios background.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -26,39 +78,43 @@
       text-align: center;
       position: relative;
     }
-    
+
     header::after {
       content: '';
       position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: 1;
     }
 
-    header h1, header p {
+    header h1,
+    header p {
       z-index: 2;
     }
 
     header h1 {
       font-size: 60px;
       margin-bottom: 10px;
-      text-shadow: 
-        -1px -1px 0 #000,  
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000,
-         5px  5px 7px #000000;
+      text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+        5px 5px 7px #000000;
     }
 
     header p {
       font-size: 20px;
       max-width: 600px;
       padding: 0 20px;
-      text-shadow: 
-        -1px -1px 0 #000,  
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000,
-         3px  3px 30px #000000;
+      text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+        3px 3px 30px #000000;
     }
 
     /* --- GENERAL SECTIONS --- */
@@ -87,7 +143,7 @@
       height: 300px;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
     }
 
@@ -101,6 +157,7 @@
       object-fit: cover;
       display: flex;
     }
+
     .portfolio .item1 img {
       width: 80%;
       height: 100%;
@@ -113,7 +170,7 @@
       background-color: #fff;
       color: #333;
     }
-    
+
     /* Alternating background color for distinction */
     .packages-section:nth-of-type(even) {
       background-color: #f9f9f9;
@@ -133,10 +190,11 @@
       margin: 20px 0;
       font-size: 16px;
       background-color: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    th, td {
+    th,
+    td {
       border: 1px solid #ddd;
       padding: 12px;
       text-align: center;
@@ -175,10 +233,11 @@
       border-radius: 50px;
       font-weight: bold;
       text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       z-index: 100;
       transition: background 0.3s;
     }
+
     .whatsapp-btn:hover {
       background: #1ebc57;
     }
@@ -197,20 +256,23 @@
       background: #000;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
 
     .video-wrapper {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      padding-bottom: 56.25%;
+      /* 16:9 Aspect Ratio */
       height: 0;
       background: #000;
     }
 
     .video-wrapper video {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       border: none;
       object-fit: cover;
     }
@@ -230,7 +292,7 @@
       border-radius: 10px;
       width: 260px;
       padding: 30px 20px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease;
       position: relative;
       display: flex;
@@ -240,7 +302,7 @@
 
     .price-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     }
 
     .price-card.popular {
@@ -276,7 +338,7 @@
       font-weight: 800;
       margin-bottom: 5px;
     }
-    
+
     .card-features {
       list-style: none;
       padding: 0;
@@ -317,11 +379,11 @@
     .book-btn:hover {
       background-color: #555;
     }
-    
+
     .price-card.popular .book-btn {
       background-color: #d4af37;
     }
-    
+
     .price-card.popular .book-btn:hover {
       background-color: #bfa13d;
     }
@@ -331,112 +393,35 @@
         flex-direction: column;
         align-items: center;
       }
+
       .price-card {
         width: 100%;
         max-width: 320px;
       }
+
       .price-card.popular {
         transform: none;
       }
     }
   </style>
 </head>
+
 <body>
+
+  <nav>
+    <ul>
+      <li><a href="#indoor-portfolio">Indoor</a></li>
+      <li><a href="#wedding-portfolio">Wedding</a></li>
+      <li><a href="#outdoor-portfolio">Outdoor</a></li>
+      <li><a href="#photo-mounts">Mounts</a></li>
+      <li><a href="#photo-frames">Frames</a></li>
+    </ul>
+  </nav>
 
   <header>
     <h1>Wolfy Image Studios</h1>
     <p>Professional photography capturing moments with style, precision, and creativity.</p>
   </header>
-
-  <section id="wedding-portfolio">
-    <h2 class="title">Wedding Gallery</h2>
-    <div class="portfolio">
-      <div class="item"><img src="Wedding/WIS_3606.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Wedding/WIS_3764.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Wedding/WIS_3751.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Wedding/WIS_3769.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Wedding/WIS_3774.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_8013.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_8075.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_8069.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_8044.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_8026.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_8033.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_8083.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_7153.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_7099.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_7231.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_7138.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_6279.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_5647.jpg" alt="Wedding"></div>
-      <div class="item"><img src="Wedding/IMG_0012.JPG" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_9816.JPG" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_9840.JPG" alt="Wedding"></div>
-      <div class="item"><img src="Wedding/IMG_9986.JPG" alt="Wedding"></div>
-      <div class="item"><img src="Wedding/IMG_9990.JPG" alt="Wedding"></div>
-      <div class="item"><img src="Images/IMG_4676.jpg" alt="Wedding"></div>
-    </div>
-  </section>
-  <section id="wedding-cinema">
-    <h2 class="title" style="margin-top: 60px;">Wedding Cinema</h2>
-    
-    <div class="video-column">
-      
-      <div class="video-item">
-        <div class="video-wrapper">
-          <video muted loop playsinline poster="Wedding/IMG_9986.JPG" class="scroll-video">
-            <source src="Videos/Video1.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-
-      <div class="video-item">
-        <div class="video-wrapper">
-          <video muted loop playsinline poster="Wedding/WIS_3606.jpg" class="scroll-video">
-            <source src="Videos/Video2.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-
-      <!--<div class="video-item">
-        <div class="video-wrapper">
-          <video muted loop playsinline poster="Images/IMG_7099.jpg" class="scroll-video">
-            <source src="Videos/Video3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      
-      <div class="video-item">
-        <div class="video-wrapper">
-          <video muted loop playsinline poster="Images/IMG_8069.jpg" class="scroll-video">
-            <source src="Videos/Video4.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    -->
-    </div>
-  </section>
-
-  <section id="wedding-packages" class="packages-section">
-    <h2 class="title">Wedding Package</h2>
-    <div class="packages-content" style="text-align: center;">
-      <p>
-        For wedding packages, we provide full event coverage with three cameras on set: 
-        1 drone for aerial shots and high-end cameras for picture clarity. <br><br>
-        <strong>Deliverables:</strong> Hard drives, photo albums, photo mounts and Flash-disk.<br><br>
-        <span style="font-size: 22px; font-weight: bold; color: #d4af37;">Full Package Discount: 42,000 KES</span>
-        <br><br>
-        <strong>Customized Options:</strong><br>
-        Video coverage: 25,000 KES<br>
-        Photos: 5,000 KES<br>
-        Drone: 7,000 KES<br>
-        Mounts (A3): 1,600 KES each<br>
-        Photo albums (100 photos): 2,000 KES<br>
-        Flash-disk: 1,000 KES<br><br>
-      </p>
-    </div>
-  </section>
-
   <section id="indoor-portfolio">
     <h2 class="title">Indoor Gallery</h2>
     <div class="portfolio">
@@ -467,14 +452,14 @@
       <div class="item1"><img src="Indoor/indoor25.jpeg" alt="Indoor"></div>
       <div class="item1"><img src="Indoor/indoor26.jpeg" alt="Indoor"></div>
       <div class="item1"><img src="Indoor/indoor27.jpeg" alt="Indoor"></div>
-      <div class="item1"><img src="Indoor/indoor28.jpeg" alt="Indoor"></div> 
+      <div class="item1"><img src="Indoor/indoor28.jpeg" alt="Indoor"></div>
     </div>
   </section>
 
   <section id="indoor-packages" class="packages-section">
     <h2 class="title">Indoor Photoshoot Packages</h2>
     <div class="packages-content">
-      
+
       <table>
         <thead>
           <tr>
@@ -484,24 +469,72 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>100.00</td><td>1 Outfit</td></tr>
-          <tr><td>3</td><td>200.00</td><td>-</td></tr>
-          <tr><td>4</td><td>300.00</td><td>2 Outfits</td></tr>
-          <tr><td>5</td><td>400.00</td><td>-</td></tr>
-          <tr><td>7</td><td>500.00</td><td>-</td></tr>
-          <tr><td>8</td><td>600.00</td><td>3 Outfits</td></tr>
-          <tr><td>10</td><td>800.00</td><td>-</td></tr>
-          <tr><td>13</td><td>1,000.00</td><td>4 Outfits</td></tr>
-          <tr><td>15</td><td>1,200.00</td><td></td></tr>
-          <tr><td>18</td><td>1,500.00</td><td>-</td></tr>
-          <tr><td>20</td><td>1,800.00</td><td>5 Outfits</td></tr>
-          <tr><td>23</td><td>2,000.00</td><td>-</td></tr>
+          <tr>
+            <td>1</td>
+            <td>100.00</td>
+            <td>1 Outfit</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>200.00</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>300.00</td>
+            <td>2 Outfits</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>400.00</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>500.00</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>600.00</td>
+            <td>3 Outfits</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>800.00</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>1,000.00</td>
+            <td>4 Outfits</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>1,200.00</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td>1,500.00</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>1,800.00</td>
+            <td>5 Outfits</td>
+          </tr>
+          <tr>
+            <td>23</td>
+            <td>2,000.00</td>
+            <td>-</td>
+          </tr>
         </tbody>
       </table>
 
       <br>
       <h3 style="text-align: center;">Delivery Schedule</h3>
-      
+
       <table style="max-width: 500px; margin: 20px auto;">
         <thead>
           <tr>
@@ -510,16 +543,37 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Sunday</td><td>Tuesday / Wednesday</td></tr>
-          <tr><td>Monday</td><td>Wednesday / Thursday</td></tr>
-          <tr><td>Tuesday</td><td>Thursday</td></tr>
-          <tr><td>Wednesday</td><td>Friday</td></tr>
-          <tr><td>Thursday</td><td>Friday/ Saturday</td></tr>
-          <tr><td>Friday</td><td>Saturday</td></tr>
-          <tr><td>Saturday</td><td>Monday</td></tr>
+          <tr>
+            <td>Sunday</td>
+            <td>Tuesday / Wednesday</td>
+          </tr>
+          <tr>
+            <td>Monday</td>
+            <td>Wednesday / Thursday</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>Thursday</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>Friday</td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td>Friday/ Saturday</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>Saturday</td>
+          </tr>
+          <tr>
+            <td>Saturday</td>
+            <td>Monday</td>
+          </tr>
         </tbody>
       </table>
-      
+
       <p style="text-align: center; margin-top: 20px;">
         <em>Book your slot today via WhatsApp!</em>
       </p>
@@ -527,7 +581,7 @@
     </div>
   </section>
 
-  <section id="ourdoor-portifolio">
+  <section id="outdoor-portfolio">
     <h2 class="title">Outdoor Gallery</h2>
     <div class="portfolio">
       <div class="item"><img src="Outdoor/outdoor 1.jpeg" alt="Outdoor"></div>
@@ -552,7 +606,7 @@
   <section id="outdoor-packages" class="packages-section">
     <h2 class="title">Outdoor Photography Packages</h2>
     <div class="packages-content">
-      
+
       <div class="pricing-grid">
         <div class="price-card">
           <div class="card-title">Quick Shoot</div>
@@ -563,9 +617,10 @@
             <li>Outdoor Location</li>
             <li>Professional Editing</li>
           </ul>
-          <a href="https://api.whatsapp.com/send?phone=254706483664&text=Hello%20Wolfy%20Image%20Studios!%20I%20am%20interested%20in%20the%201%20Hour%20Outdoor%20Package." class="book-btn">Book Now</a>
+          <a href="https://api.whatsapp.com/send?phone=254706483664&text=Hello%20Wolfy%20Image%20Studios!%20I%20am%20interested%20in%20the%201%20Hour%20Outdoor%20Package."
+            class="book-btn">Book Now</a>
         </div>
-    
+
         <div class="price-card popular">
           <div class="popular-tag">Most Popular</div>
           <div class="card-title">Standard Shoot</div>
@@ -576,9 +631,10 @@
             <li>Multiple Outfit Changes</li>
             <li>Professional Editing</li>
           </ul>
-          <a href="https://api.whatsapp.com/send?phone=254706483664&text=Hello%20Wolfy%20Image%20Studios!%20I%20am%20interested%20in%20the%202%20Hour%20Outdoor%20Package." class="book-btn">Book Now</a>
+          <a href="https://api.whatsapp.com/send?phone=254706483664&text=Hello%20Wolfy%20Image%20Studios!%20I%20am%20interested%20in%20the%202%20Hour%20Outdoor%20Package."
+            class="book-btn">Book Now</a>
         </div>
-    
+
         <div class="price-card">
           <div class="card-title">Half Day</div>
           <div class="card-price">5,000<span>/-</span></div>
@@ -588,9 +644,10 @@
             <li>Great for Events</li>
             <li>Priority Editing</li>
           </ul>
-          <a href="https://api.whatsapp.com/send?phone=254706483664&text=Hello%20Wolfy%20Image%20Studios!%20I%20am%20interested%20in%20the%20Half%20Day%20Outdoor%20Package." class="book-btn">Book Now</a>
+          <a href="https://api.whatsapp.com/send?phone=254706483664&text=Hello%20Wolfy%20Image%20Studios!%20I%20am%20interested%20in%20the%20Half%20Day%20Outdoor%20Package."
+            class="book-btn">Book Now</a>
         </div>
-    
+
         <div class="price-card">
           <div class="card-title">Full Day</div>
           <div class="card-price">8,000<span>/-</span></div>
@@ -600,7 +657,8 @@
             <li>All Day Events</li>
             <li>Priority Editing</li>
           </ul>
-          <a href="https://api.whatsapp.com/send?phone=254706483664&text=Hello%20Wolfy%20Image%20Studios!%20I%20am%20interested%20in%20the%20Full%20Day%20Outdoor%20Package." class="book-btn">Book Now</a>
+          <a href="https://api.whatsapp.com/send?phone=254706483664&text=Hello%20Wolfy%20Image%20Studios!%20I%20am%20interested%20in%20the%20Full%20Day%20Outdoor%20Package."
+            class="book-btn">Book Now</a>
         </div>
       </div>
 
@@ -611,9 +669,11 @@
     <h2 class="title">Photo Mounts</h2>
     <div class="packages-content">
       <p style="text-align: center;">Premium photo mounts to display your memories beautifully.</p>
-      <p style="text-align: center; font-weight: bold; color: #d4af37;">BEST QUAILITY AVAILABLE(IMPORTED BOARDS) and WITH WATER AND SUN PROOF.</p>
+      <p style="text-align: center; font-weight: bold; color: #d4af37;">BEST QUAILITY AVAILABLE(IMPORTED BOARDS) and
+        WITH WATER AND SUN PROOF.</p>
       <div style="text-align: center; margin-bottom: 20px;">
-        <img src="Images/mountsizes2.avif.jpg" alt="Photo Mount Sizes" style="max-width: 100%; height: auto; border-radius: 10px;">
+        <img src="Images/mountsizes2.avif.jpg" alt="Photo Mount Sizes"
+          style="max-width: 100%; height: auto; border-radius: 10px;">
       </div>
       <table style="max-width: 600px; margin: 20px auto;">
         <thead>
@@ -623,11 +683,26 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>A4</td><td>1,000</td></tr>
-          <tr><td>A3</td><td>1,600</td></tr>
-          <tr><td>A2</td><td>2,500</td></tr>
-          <tr><td>A1</td><td>4,000</td></tr>
-          <tr><td>A0</td><td>8,000</td></tr>
+          <tr>
+            <td>A4</td>
+            <td>1,000</td>
+          </tr>
+          <tr>
+            <td>A3</td>
+            <td>1,600</td>
+          </tr>
+          <tr>
+            <td>A2</td>
+            <td>2,500</td>
+          </tr>
+          <tr>
+            <td>A1</td>
+            <td>4,000</td>
+          </tr>
+          <tr>
+            <td>A0</td>
+            <td>8,000</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -638,7 +713,8 @@
     <div class="packages-content">
       <p style="text-align: center;">Elegant frames in standard sizes. Custom sizes available on request.</p>
       <div style="text-align: center; margin-bottom: 20px;">
-        <img src="Images/pictureframessizes.jpg" alt="Photo Frame Sizes" style="max-width: 100%; height: auto; border-radius: 10px;">
+        <img src="Images/pictureframessizes.jpg" alt="Photo Frame Sizes"
+          style="max-width: 100%; height: auto; border-radius: 10px;">
       </div>
       <table style="max-width: 600px; margin: 20px auto;">
         <thead>
@@ -648,54 +724,156 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>A5</td><td>500</td></tr>
-          <tr><td>A4</td><td>800</td></tr>
-          <tr><td>A3</td><td>1,400</td></tr>
-          <tr><td>A2</td><td>2,000</td></tr>
-          <tr><td colspan="2" style="font-size: 14px; color: #666;"><em>Larger sizes (A1, A0) coming soon.</em></td></tr>
+          <tr>
+            <td>A5</td>
+            <td>500</td>
+          </tr>
+          <tr>
+            <td>A4</td>
+            <td>800</td>
+          </tr>
+          <tr>
+            <td>A3</td>
+            <td>1,400</td>
+          </tr>
+          <tr>
+            <td>A2</td>
+            <td>2,000</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="font-size: 14px; color: #666;"><em>Larger sizes (A1, A0) coming soon.</em></td>
+          </tr>
         </tbody>
       </table>
-       <p style="text-align: center; margin-top: 30px;">
-          <em>Order your custom mount or frame today via WhatsApp!</em>
-        </p>
+      <p style="text-align: center; margin-top: 30px;">
+        <em>Order your custom mount or frame today via WhatsApp!</em>
+      </p>
     </div>
   </section>
 
- <footer>
-    <a href="https://api.whatsapp.com/send?phone=254706483664&text=Hello%20Wolfy%20Image%20Studios!%20I%20would%20like%20to%20book%20a%20session." 
-       target="_blank" 
-       rel="noopener noreferrer"
-       class="whatsapp-btn">
-       Book Now
+  <section id="wedding-portfolio">
+    <h2 class="title">Wedding Gallery</h2>
+    <div class="portfolio">
+      <div class="item"><img src="Wedding/Wedding1.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Wedding/Wedding6.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Wedding/Wedding7.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Wedding/Wedding3.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Wedding/Wedding8.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_8013.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_8075.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_8069.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_8044.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_8026.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_8033.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_8083.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_7153.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_7099.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_7231.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_7138.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_6279.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_5647.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Wedding/Wedding5.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_9816.JPG" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_9840.JPG" alt="Wedding"></div>
+      <div class="item"><img src="Wedding/Wedding2.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Wedding/Wedding4.jpg" alt="Wedding"></div>
+      <div class="item"><img src="Images/IMG_4676.jpg" alt="Wedding"></div>
+    </div>
+  </section>
+  <section id="wedding-cinema">
+    <h2 class="title" style="margin-top: 60px;">Wedding Cinema</h2>
+
+    <div class="video-column">
+
+      <div class="video-item">
+        <div class="video-wrapper">
+          <video muted loop playsinline poster="Wedding/Wedding4.jpg" class="scroll-video">
+            <source src="Videos/Video1.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="video-item">
+        <div class="video-wrapper">
+          <video muted loop playsinline poster="Wedding/Wedding6.jpg" class="scroll-video">
+            <source src="Videos/Video2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!--<div class="video-item">
+        <div class="video-wrapper">
+          <video muted loop playsinline poster="Images/IMG_7099.jpg" class="scroll-video">
+            <source src="Videos/Video3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      
+      <div class="video-item">
+        <div class="video-wrapper">
+          <video muted loop playsinline poster="Images/IMG_8069.jpg" class="scroll-video">
+            <source src="Videos/Video4.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    -->
+    </div>
+  </section>
+
+  <section id="wedding-packages" class="packages-section">
+    <h2 class="title">Wedding Package</h2>
+    <div class="packages-content" style="text-align: center;">
+      <p>
+        For wedding packages, we provide full event coverage with three cameras on set:
+        1 drone for aerial shots and high-end cameras for picture clarity. <br><br>
+        <strong>Deliverables:</strong> Hard drives, photo albums, photo mounts and Flash-disk.<br><br>
+        <span style="font-size: 22px; font-weight: bold; color: #d4af37;">Full Package Discount: 42,000 KES</span>
+        <br><br>
+        <strong>Customized Options:</strong><br>
+        Video coverage: 25,000 KES<br>
+        Photos: 5,000 KES<br>
+        Drone: 7,000 KES<br>
+        Mounts (A3): 1,600 KES each<br>
+        Photo albums (100 photos): 2,000 KES<br>
+        Flash-disk: 1,000 KES<br><br>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <a href="https://api.whatsapp.com/send?phone=254706483664&text=Hello%20Wolfy%20Image%20Studios!%20I%20would%20like%20to%20book%20a%20session."
+      target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+      Book Now
     </a>
     <p>Location: Jordan building,2nd floor(Parking area),Maimahiu, Kenya</p>
     <p>&copy; 2026 Wolfy Image Studios</p>
   </footer>
   <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Get all videos with class 'scroll-video'
-    const videos = document.querySelectorAll('.scroll-video');
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get all videos with class 'scroll-video'
+      const videos = document.querySelectorAll('.scroll-video');
 
-    // Create an observer
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        // If the video is visible
-        if (entry.isIntersecting) {
-          entry.target.play();
-        } else {
-          // If the video is not visible, pause it
-          entry.target.pause();
-        }
+      // Create an observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // If the video is visible
+          if (entry.isIntersecting) {
+            entry.target.play();
+          } else {
+            // If the video is not visible, pause it
+            entry.target.pause();
+          }
+        });
+      }, {
+        threshold: 0.5 // Trigger when 50% of the video is visible
       });
-    }, {
-      threshold: 0.5 // Trigger when 50% of the video is visible
-    });
 
-    // Observe each video
-    videos.forEach(video => {
-      observer.observe(video);
+      // Observe each video
+      videos.forEach(video => {
+        observer.observe(video);
+      });
     });
-  });
-</script>
+  </script>
 </body>
+
 </html>
