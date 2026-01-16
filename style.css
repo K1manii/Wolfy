@@ -8,6 +8,27 @@
       /* Increased space for fixed navbar + top bar */
     }
 
+    /* --- PRELOADER --- */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.5s ease;
+    }
+    
+    #preloader img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
     /* --- TOP BAR --- */
     .top-bar {
       background-color: #111;
