@@ -11,6 +11,11 @@
 
 <body>
 
+  <!-- --- PRELOADER --- -->
+  <div id="preloader">
+    <img src="Others/loader.jpg" alt="Loading...">
+  </div>
+
   <!-- --- TOP BAR --- -->
   <div class="top-bar">
     <p><span class="desktop-text"></span>Welcome to Wolfy Image Studios | Capturing Moments with Style</p>
@@ -573,6 +578,17 @@
       videos.forEach(video => {
         observer.observe(video);
       });
+    });
+
+    // Preloader Script
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      setTimeout(function() {
+        preloader.style.opacity = "0";
+        setTimeout(function () {
+          preloader.style.display = "none";
+        }, 500); // 0.5s fade out duration matches CSS transition
+      }, 1800); // Wait 1.8 seconds before fading out
     });
   </script>
 </body>
