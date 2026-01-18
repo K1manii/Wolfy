@@ -498,7 +498,9 @@
 
       <div class="video-item">
         <div class="video-wrapper">
-          <video  loop playsinline preload="none" poster="Wedding/Wedding4.jpg" class="scroll-video">
+          <button class="play-btn">▶</button>
+          <button class="play-btn">▶</button>
+          <video loop playsinline preload="none" poster="Wedding/Wedding4.jpg" class="scroll-video">
             <source src="Videos/Video1.mp4" type="video/mp4">
           </video>
         </div>
@@ -506,6 +508,9 @@
 
       <div class="video-item">
         <div class="video-wrapper">
+          <button class="play-btn">▶</button>
+          <button class="play-btn">▶</button>
+          <button class="play-btn">▶</button>
           <video loop playsinline preload="none" poster="Wedding/Wedding6.jpg" class="scroll-video">
             <source src="Videos/Video2.mp4" type="video/mp4">
           </video>
@@ -565,34 +570,58 @@
   </footer>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Get all videos with class 'scroll-video'
       const videos = document.querySelectorAll('.scroll-video');
+      const playButtons = document.querySelectorAll('.play-btn');
 
-      // Create an observer
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          // If the video is visible
-          if (entry.isIntersecting) {
-            // Pause all other videos
-            videos.forEach(v => {
-              if (v !== entry.target) {
-                v.pause();
-              }
-            });
-            // Play the visible video
-            entry.target.play();
-          } else {
-            // If the video is not visible, pause it
-            entry.target.pause();
-          }
+      function stopAllVideos() {
+        videos.forEach(v => {
+          v.pause();
+          // Find the button associated with this video and show it
+          const btn = v.parentElement.querySelector('.play-btn');
+          if (btn) btn.style.display = 'flex';
         });
-      }, {
-        threshold: 0.5 // Trigger when 50% of the video is visible
-      });
+      }
 
-      // Observe each video
+      playButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const video = this.nextElementSibling; // The video is right after the button
+          
+          // 1. Pause all others
+          stopAllVideos();
+          
+          // 2. Play this one
+          video.play();
+          
+          // 3. Hide this button
+          this.style.display = 'none';
+        });
+      });
+      
+      // Allow clicking on the video itself to pause/play
       videos.forEach(video => {
-        observer.observe(video);
+         video.addEventListener('click', function() {
+            if (this.paused) {
+                 stopAllVideos();
+                 this.play();
+                 const btn = this.parentElement.querySelector('.play-btn');
+                 if (btn) btn.style.display = 'none';
+            } else {
+                 this.pause();
+                 const btn = this.parentElement.querySelector('.play-btn');
+                 if (btn) btn.style.display = 'flex';
+            }
+         });
+         
+         // Fix: Show button again if video ends or is paused by other means
+         video.addEventListener('pause', function() {
+             const btn = this.parentElement.querySelector('.play-btn');
+             if (btn) btn.style.display = 'flex';
+         });
+         
+         video.addEventListener('play', function() {
+             const btn = this.parentElement.querySelector('.play-btn');
+             if (btn) btn.style.display = 'none';
+         });
       });
     });
 
