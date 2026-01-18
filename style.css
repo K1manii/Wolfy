@@ -199,6 +199,13 @@
       display: flex;
     }
 
+    .portfolio .item1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
     .portfolio .item1 img {
       width: 80%;
       height: 100%;
