@@ -498,7 +498,7 @@
 
       <div class="video-item">
         <div class="video-wrapper">
-          <video  loop playsinline poster="Wedding/Wedding4.jpg" class="scroll-video">
+          <video  loop playsinline preload="none" poster="Wedding/Wedding4.jpg" class="scroll-video">
             <source src="Videos/Video1.mp4" type="video/mp4">
           </video>
         </div>
@@ -506,7 +506,7 @@
 
       <div class="video-item">
         <div class="video-wrapper">
-          <video loop playsinline poster="Wedding/Wedding6.jpg" class="scroll-video">
+          <video loop playsinline preload="none" poster="Wedding/Wedding6.jpg" class="scroll-video">
             <source src="Videos/Video2.mp4" type="video/mp4">
           </video>
         </div>
@@ -573,6 +573,13 @@
         entries.forEach(entry => {
           // If the video is visible
           if (entry.isIntersecting) {
+            // Pause all other videos
+            videos.forEach(v => {
+              if (v !== entry.target) {
+                v.pause();
+              }
+            });
+            // Play the visible video
             entry.target.play();
           } else {
             // If the video is not visible, pause it
