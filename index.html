@@ -620,6 +620,21 @@
              if (btn) btn.style.display = 'none';
          });
       });
+
+      // Auto-pause when scrolling away
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            entry.target.pause();
+          }
+        });
+      }, {
+        threshold: 0.1 // Pauses when less than 10% is visible, effectively when leaving view
+      });
+      
+      videos.forEach(video => {
+        observer.observe(video);
+      });
     });
 
     // Preloader Script
