@@ -75,7 +75,8 @@
     <h2 class="title">Indoor Photoshoot Packages</h2>
     <div class="packages-content">
 
-      <table>
+      <div class="table-container">
+        <table>
         <thead>
           <tr>
             <th>Photos</th>
@@ -146,10 +147,12 @@
           </tr>
         </tbody>
       </table>
+      </div>
 
       <br>
       <h3 style="text-align: center;">Delivery Schedule</h3>
 
+      <div class="table-container">
       <table style="max-width: 500px; margin: 20px auto;">
         <thead>
           <tr>
@@ -188,6 +191,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
 
       <p style="text-align: center; margin-top: 20px;">
         <em>Book your slot today via WhatsApp!</em>
@@ -293,6 +297,7 @@
         <img src="Images/mountsizes2.avif.jpg" alt="Photo Mount Sizes"
           style="max-width: 100%; height: auto; border-radius: 10px;">
       </div>
+      <div class="table-container">
       <table style="max-width: 600px; margin: 20px auto;">
         <thead>
           <tr>
@@ -323,6 +328,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
       <p style="text-align: center; margin-top: 30px;">
         <em>Order your custom mount today via WhatsApp!</em>
       </p>
@@ -339,6 +345,7 @@
         <img src="Images/pictureframessizes.jpg" alt="Photo Frame Sizes"
           style="max-width: 100%; height: auto; border-radius: 10px;">
       </div>
+      <div class="table-container">
       <table style="max-width: 600px; margin: 20px auto;">
         <thead>
           <tr>
@@ -364,10 +371,12 @@
             <td>2,000</td>
           </tr>
           <tr>
-            <td colspan="2" style="font-size: 14px; color: #666;"><em>Larger sizes (A1, A0) coming soon.</em></td>
+            <td>A5</td>
+            <td><td colspan="2" style="font-size: 14px; color: #666;"><em>Larger sizes (A1, A0) coming soon.</em></td></td>
           </tr>
         </tbody>
       </table>
+      </div>
       <p style="text-align: center; margin-top: 30px;">
         <em>Order your custom frame today via WhatsApp!</em>
       </p>
@@ -581,15 +590,55 @@
     });
 
     // Preloader Script
+    // Preloader Script
     window.addEventListener("load", function () {
+      initPreloader();
+    });
+
+    // Fallback in case 'load' event doesn't fire fast enough
+    setTimeout(function() {
+      initPreloader();
+    }, 4000); // 4 seconds max wait time
+
+    let preloaderInitialized = false;
+    
+    function initPreloader() {
+      if (preloaderInitialized) return;
+      preloaderInitialized = true;
+
       const preloader = document.getElementById("preloader");
+      const minDisplayTime = 2000; // 2 seconds
+      
+      // Calculate how much time has passed since the page started loading?
+      // Actually, we want to guarantee *at least* 2s from now? 
+      // Or 2s from page open? The original code waited 2s AFTER load event (which was weird if load was fast)
+      // or waited 2s total? 
+      // Original code: window.addEventListener("load", ... setTimeout(..., 2000))
+      // This means it waited 2s AFTER everything loaded. That's a long time.
+      // Let's change it to be smoother: Ensure it stays for 2s TOTAL from page start, 
+      // but since we can't easily track page start in a simple script repeatedly,
+      // let's stick to the user's apparent intent: "set it to open the webpage after 2seconds"
+      
+      // Let's try to act immediately if 2s has already passed, or wait the difference.
+      // Only problem is we don't know exactly when the page started.
+      
+      // Simpler approach that respects the user's specific request "open after 2seconds":
+      // We will wait 2s from this specific call execution point to be safe and consistent with previous behavior,
+      // BUT we also have the fallback above calling this.
+      
+      // To prevent 'double waiting' if the fallback triggers first, let's just use a fixed small delay 
+      // if the load is super fast, but if it was slow (triggered by fallback), hide immediately.
+      
+      // Actually, looking at the user's request: "open the webpage after 2seconds".
+      // Let's wait 2s.
+      
       setTimeout(function() {
         preloader.style.opacity = "0";
         setTimeout(function () {
           preloader.style.display = "none";
-        }, 500); // 0.5s fade out duration matches CSS transition
-      }, 1800); // Wait 1.8 seconds before fading out
-    });
+        }, 500);
+      }, 2000);
+    }
   </script>
 </body>
 
