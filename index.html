@@ -332,8 +332,8 @@
       <p style="text-align: center; margin-top: 30px;">
         <em>Order your custom mount today via WhatsApp!</em>
       </p>
-       <a href="https://api.whatsapp.com/send?phone=254706483664&text=Hello%20Wolfy%20Image%20Studios!%20I%20would%20like%20to%20order%20a%20photo%20mount."
-        class="indoor-btn">Book Now</a>
+      <a href="https://api.whatsapp.com/send?phone=254706483664&text=Hello%20Wolfy%20Image%20Studios!%20I%20would%20like%20to%20order%20a%20photo%20mount."
+        class="indoor-btn">Order  Now</a>
     </div>
   </section>
 
@@ -380,8 +380,8 @@
       <p style="text-align: center; margin-top: 30px;">
         <em>Order your custom frame today via WhatsApp!</em>
       </p>
-       <a href="https://api.whatsapp.com/send?phone=254706483664&text=Hello%20Wolfy%20Image%20Studios!%20I%20would%20like%20to%20order%20a%20photo%20frame."
-        class="indoor-btn">Book Now</a>
+      <a href="https://api.whatsapp.com/send?phone=254706483664&text=Hello%20Wolfy%20Image%20Studios!%20I%20would%20like%20to%20order%20a%20photo%20frame."
+        class="indoor-btn">Order Now</a>
     </div>
   </section>
 
@@ -412,7 +412,7 @@
         <div class="price-card">
           <div class="card-title">Photography Coverage</div>
           <div class="card-price">5,000<span>/-</span> <span style="font-size: 1rem; font-weight: normal;">(Half Day)</span></div>
-           <div class="card-price" style="margin-top: 5px;">8,000<span>/-</span> <span style="font-size: 1rem; font-weight: normal;">(Full Day)</span></div>
+          <div class="card-price" style="margin-top: 5px;">8,000<span>/-</span> <span style="font-size: 1rem; font-weight: normal;">(Full Day)</span></div>
           <ul class="card-features">
             <li><span class="feature-bold">Half Day</span> Coverage</li>
             <li><span class="feature-bold">Full Day</span> Coverage</li>
@@ -513,10 +513,11 @@
           </video>
         </div>
       </div>
-      <!--
+      
       <div class="video-item">
         <div class="video-wrapper">
-          <video muted loop playsinline poster="Images/IMG_7099.jpg" class="scroll-video">
+          <button class="play-btn">▶</button>
+          <video loop playsinline preload="none" poster="Images/IMG_7099.jpg" class="scroll-video">
             <source src="Videos/Video3.mp4" type="video/mp4">
           </video>
         </div>
@@ -524,12 +525,12 @@
       
       <div class="video-item">
         <div class="video-wrapper">
-          <video loop playsinline poster="Images/IMG_8069.jpg" class="scroll-video">
+          <button class="play-btn">▶</button>
+          <video loop playsinline preload="none" poster="Images/IMG_8069.jpg" class="scroll-video">
             <source src="Videos/Video4.mp4" type="video/mp4">
           </video>
         </div>
       </div>
-    -->
     </div>
   </section>
 
@@ -596,29 +597,29 @@
       
       // Allow clicking on the video itself to pause/play
       videos.forEach(video => {
-         video.addEventListener('click', function() {
+        video.addEventListener('click', function() {
             if (this.paused) {
-                 stopAllVideos();
-                 this.play();
-                 const btn = this.parentElement.querySelector('.play-btn');
-                 if (btn) btn.style.display = 'none';
+              stopAllVideos();
+              this.play();
+              const btn = this.parentElement.querySelector('.play-btn');
+              if (btn) btn.style.display = 'none';
             } else {
-                 this.pause();
-                 const btn = this.parentElement.querySelector('.play-btn');
-                 if (btn) btn.style.display = 'flex';
+              this.pause();
+              const btn = this.parentElement.querySelector('.play-btn');
+              if (btn) btn.style.display = 'flex';
             }
-         });
-         
+          });
+          
          // Fix: Show button again if video ends or is paused by other means
-         video.addEventListener('pause', function() {
-             const btn = this.parentElement.querySelector('.play-btn');
-             if (btn) btn.style.display = 'flex';
-         });
-         
-         video.addEventListener('play', function() {
-             const btn = this.parentElement.querySelector('.play-btn');
-             if (btn) btn.style.display = 'none';
-         });
+          video.addEventListener('pause', function() {
+            const btn = this.parentElement.querySelector('.play-btn');
+            if (btn) btn.style.display = 'flex';
+          });
+          
+          video.addEventListener('play', function() {
+            const btn = this.parentElement.querySelector('.play-btn');
+            if (btn) btn.style.display = 'none';
+          });
       });
 
       // Auto-pause when scrolling away
