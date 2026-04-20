@@ -236,13 +236,13 @@
 
     /* --- PACKAGES & TABLES --- */
     .packages-section {
-      background-color: #fff;
+      background-color:#e8e5e6;
       color: #333;
     }
 
     /* Alternating background color for distinction */
     .packages-section:nth-of-type(even) {
-      background-color: #f9f9f9;
+      background-color: #e8e5e6;
     }
 
     .packages-content {
@@ -290,6 +290,23 @@
       color: white;
       padding: 40px 20px;
       margin-top: 40px;
+    }
+
+    .dev-credit {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #555;
+      letter-spacing: 0.5px;
+    }
+
+    .dev-link {
+      color: #888;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .dev-link:hover {
+      color: #d4af37;
     }
 
     .whatsapp-btn {
@@ -457,6 +474,95 @@
       background-color: #bfa13d;
     }
 
+    /* --- INDOOR BIO BANNER --- */
+    .indoor-bio {
+      text-align: center;
+      background-color: #1a1a1a;
+      color: #d4af37;
+      padding: 18px 30px;
+      margin: 0 auto 40px;
+      max-width: 800px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid #d4af37;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      line-height: 1.6;
+    }
+
+    .indoor-bio strong {
+      color: #fff;
+      font-size: 20px;
+    }
+
+    /* Inline "Click Me" pricing link inside the bio */
+    .bio-view-prices-btn {
+      display: inline-block;
+      background-color: #fff;
+      color: #111;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      margin-left: 6px;
+      vertical-align: middle;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .bio-view-prices-btn:hover {
+      background-color: #fff;
+      color: #111;
+      transform: scale(1.05);
+    }
+
+    /* --- INDOOR SUB-SECTION TITLES --- */
+    .indoor-sub-title {
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin: 50px auto 25px;
+      color: #222;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .indoor-sub-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #d4af37;
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    /* --- ARTIFICIAL PRICE NOTE --- */
+    .artificial-price-note {
+      text-align: center;
+      background: #fff;
+      border-left: 5px solid #d4af37;
+      max-width: 500px;
+      margin: 30px auto 20px;
+      padding: 16px 24px;
+      border-radius: 0 8px 8px 0;
+      font-size: 17px;
+      color: #333;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .artificial-price-note strong {
+      color: #d4af37;
+      font-size: 19px;
+    }
+
     /* --- INDOOR BUTTON --- */
     .indoor-btn {
       display: block;
@@ -547,4 +653,192 @@
 .play-btn:hover {
   background-color: rgba(212, 175, 55, 0.8); /* Gold color on hover */
   transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* --- STREAMING INFO BOX (Wedding Packages) --- */
+.streaming-info-box {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  border: 1px solid #d4af37;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px 28px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  line-height: 1.7;
+}
+
+.streaming-info-box strong {
+  color: #d4af37;
+}
+
+.streaming-info-box p:first-child {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.streaming-info-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+
+.streaming-info-box ul li {
+  font-size: 22px;
+  padding: 6px 0;
+  border-bottom: 1px solid #333;
+}
+
+.streaming-info-box ul li:last-child {
+  border-bottom: none;
+}
+
+/* =============================================
+   WEDDING PACKAGES — CUSTOM LAYOUT
+   ============================================= */
+
+/* Description Banner */
+.wedding-desc-banner {
+  background: #1a1a1a;
+  color: #e0e0e0;
+  border: 1px solid #d4af37;
+  border-radius: 12px;
+  max-width: 750px;
+  margin: 0 auto 30px;
+  padding: 22px 30px;
+  line-height: 1.8;
+  font-size: 22px;
+}
+
+.wedding-desc-banner strong {
+  color: #d4af37;
+}
+
+.wedding-deliverables {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #ccc;
+  border-top: 1px solid #333;
+  padding-top: 12px;
+}
+
+/* Full Package Price Badge */
+.wedding-full-price {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #d4af37, #b8952e);
+  color: #111;
+  border-radius: 16px;
+  padding: 22px 40px;
+  margin: 0 auto 35px;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+  min-width: 280px;
+}
+
+.full-price-label {
+  font-size: 19px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+
+.full-price-amount {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.full-price-note {
+  font-size: 19px;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Customized Options Title */
+.wedding-options-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #222;
+  margin: 10px 0 20px;
+}
+
+/* Options Grid */
+.wedding-options-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto 30px;
+}
+
+.wedding-option-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  width: 150px;
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.wedding-option-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  border-color: #d4af37;
+}
+
+.opt-icon {
+  font-size: 30px;
+}
+
+.opt-label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.opt-label small {
+  font-weight: normal;
+  color: #888;
+  font-size: 14px;
+}
+
+.opt-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: #d4af37;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .wedding-options-grid {
+    gap: 12px;
+  }
+  .wedding-option-card {
+    width: 130px;
+    padding: 16px 10px;
+  }
+  .wedding-full-price {
+    padding: 18px 24px;
+    min-width: 220px;
+  }
+  .full-price-amount {
+    font-size: 30px;
+  }
 }
